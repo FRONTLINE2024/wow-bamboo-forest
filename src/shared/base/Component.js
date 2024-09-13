@@ -8,12 +8,16 @@ export class Component {
     this.#props = props;
   }
 
+  static html(strings, ...values) {
+    return String.raw(strings, ...values);
+  }
+
   static template() {
     // UI 구성
     return "";
   }
 
   render() {
-    this.#target.innerHTML = this.template(); // UI 렌더링
+    this.#target.innerHTML = this.constructor.template(); // UI 렌더링
   }
 }

@@ -1,4 +1,5 @@
 import App from "./App";
 import "./reset.scss";
 
-(() => new App(document.querySelector("#app")))();
+const app = new App(document.getElementById("#app"));
+app.render();
