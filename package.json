@@ -9,8 +9,8 @@
     "preview": "vite preview"
   },
   "devDependencies": {
-    "eslint": "^9.10.0",
-    "eslint-config-ham-javascript": "^0.0.7",
+    "eslint": "^8",
+    "eslint-config-ham-javascript": "^0.0.9",
     "eslint-plugin-prettier": "^5.2.1",
     "prettier": "^3.3.3",
     "sass": "^1.78.0",
