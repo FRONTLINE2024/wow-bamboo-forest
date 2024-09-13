@@ -9,8 +9,8 @@ devDependencies:
     specifier: ^8
     version: 8.57.0
   eslint-config-ham-javascript:
-    specifier: ^0.0.9
-    version: 0.0.9(eslint@8.57.0)
+    specifier: ^0.0.11
+    version: 0.0.11(eslint@8.57.0)
   eslint-plugin-prettier:
     specifier: ^5.2.1
     version: 5.2.1(eslint@8.57.0)(prettier@3.3.3)
@@ -908,8 +908,8 @@ packages:
     engines: {node: '>=10'}
     dev: true
 
-  /eslint-config-ham-javascript@0.0.9(eslint@8.57.0):
-    resolution: {integrity: sha512-mSw9CcHFGqoY3hKEr02DoAPOFz9MmysZEsCz9wBSzYBgYBOFtBw6dONsvTaeqJxQSTD96yzX5Z+wkq3/PzsArQ==}
+  /eslint-config-ham-javascript@0.0.11(eslint@8.57.0):
+    resolution: {integrity: sha512-5Gfu64kDodOIFX/VNTR+1UjB0l4fLJaDEbo+MBZFjdH4aNheH0qyB6hwFszyojeKJAbbbcdD9NvxdHGIPh6Nug==}
     peerDependencies:
       eslint: '>= 8'
     dependencies:
