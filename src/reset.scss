@@ -162,6 +162,8 @@ input {
   -webkit-appearance: none; /* Safari and Chrome */
   -moz-appearance: none; /* Firefox */
   appearance: none;
+  outline: none;
+  border: none;
 
   [type="number"]::-webkit-inner-spin-button,
   [type="number"]::-webkit-outer-spin-button {
@@ -169,8 +171,11 @@ input {
     -moz-appearance: none;
     appearance: none;
   }
+}
 
-  &:focus {
-    outline: none;
-  }
+textarea {
+  appearance: none;
+  outline: none;
+  border: none;
+  resize: none;
 }

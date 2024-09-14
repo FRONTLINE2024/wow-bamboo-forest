@@ -18,7 +18,7 @@
         </h1>
         <div class="right">
           <button class="button">글쓰기</button>
-          <a class="item" href="/mypage.html">마이</a>
+          <a class="button mypage" href="/mypage.html">마이</a>
         </div>
       </div>
     </nav>
@@ -38,6 +38,19 @@
         </div>
       </ul>
     </main>
+    <div class="backdrop">
+      <dialog class="modal">
+        <h2 style="font-size: 1.5rem; font-weight: 500">글쓰기</h2>
+        <form class="form">
+          <input class="input" placeholder="제목" />
+          <textarea class="input textarea" placeholder="내용"></textarea>
+          <div class="buttons">
+            <button class="submit cancel">취소</button>
+            <button class="submit">완료</button>
+          </div>
+        </form>
+      </dialog>
+    </div>
     <script type="module" src="./index.js"></script>
   </body>
 </html>
