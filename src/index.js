@@ -4,8 +4,7 @@ const cancelButton = document.querySelector(".cancel");
 const modal = document.querySelector(".backdrop");
 
 const list = document.querySelector(".list");
-const titleInput = document.querySelector(".input");
-const contentInput = document.querySelector(".textarea");
+const input = document.querySelector(".input");
 
 const form = document.querySelector(".form");
 
@@ -30,20 +29,19 @@ const handleClickCloseModal = () => {
 const handleClickSubmit = (e) => {
   e.preventDefault();
 
-  const { value: title } = titleInput;
-  const { value: content } = contentInput;
+  const { value: content } = input;
+  const num = list.children.length + 1;
 
   const item = document.createElement("div");
   item.classList.add("card");
   item.innerHTML = `
-      <h3 class="title">${title}</h3>
-      <p class="body2">${content}</p>
+      <p class="body2">#${num}번째 음메</p>
+      <h3 class="title">${content}</h3>
     `;
 
   list.appendChild(item);
 
-  titleInput.value = "";
-  contentInput.value = "";
+  input.value = "";
 
   handleClickCloseModal();
 };
