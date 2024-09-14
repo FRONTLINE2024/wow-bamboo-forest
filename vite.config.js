@@ -1,7 +1,7 @@
 import { defineConfig } from "vite";
 
 export default defineConfig({
-  root: "src/app",
+  root: "src",
   css: {
     preprocessorOptions: {
       scss: {},
