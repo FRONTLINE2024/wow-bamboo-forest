@@ -1,0 +1,24 @@
+@import url("../shared/layout.scss");
+@import url("../shared/card.scss");
+@import url("../shared/modal.scss");
+
+.text {
+  background-color: transparent;
+  color: #62686e;
+  text-decoration: underline;
+
+  white-space: nowrap;
+}
+
+.myinfo {
+  width: 100%;
+  min-height: fit-content;
+
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+
+  @media (min-width: 1024px) {
+    width: 50%;
+  }
+}
