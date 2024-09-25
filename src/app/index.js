@@ -1,5 +1,5 @@
-import App from "./App";
+import { Home } from "../pages";
 import "./reset.scss";
 
-const app = new App(document.getElementById("#app"));
+const app = new Home(document.getElementById("#app"));
 app.render();

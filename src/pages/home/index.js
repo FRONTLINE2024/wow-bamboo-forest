@@ -1,5 +1,5 @@
-import { Component, Card } from "../shared";
-export default class App extends Component {
+import { Component, Card } from "../../shared";
+export class Home extends Component {
   setup() {
     this.element = document.createElement("main");
     this.element.id = "my-app";
