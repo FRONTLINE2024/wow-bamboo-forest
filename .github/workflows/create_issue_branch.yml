@@ -2,12 +2,11 @@ name: Create Issue Branch
 on:
   issues:
     types: [assigned]
-  issue_comment:
-    types: [created]
   pull_request:
     types: [closed]
 
 permissions:
+  issues: read
   contents: write
 
 jobs:
