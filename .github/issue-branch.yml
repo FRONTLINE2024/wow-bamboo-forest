@@ -1,0 +1,13 @@
+branchName: "chistock-#${issue.number}"
+autoCloseIssue: true
+copyIssueLabelsToPR: true
+copyIssueAssigneeToPR: true
+branches:
+  - label: ✨ Feature
+    prefix: feature/
+  - label: 🐛 Fix
+    prefix: fix/
+  - label: ⚙️ Chore
+    prefix: chore/
+  - label: ♻️ Refactor
+    prefix: refactor/
