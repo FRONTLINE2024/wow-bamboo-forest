@@ -1,3 +1,4 @@
+import { createPost } from "../../features";
 import { Component, Card } from "../../shared";
 export class Home extends Component {
   setup() {
@@ -15,6 +16,9 @@ export class Home extends Component {
 
   setTemplate() {
     const card = new Card(this.element);
+    card.template().addEventListener("click", () => {
+      createPost();
+    });
     card.render();
   }
 }
