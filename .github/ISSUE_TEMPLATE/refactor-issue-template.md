@@ -1,8 +1,8 @@
 ---
-name: Issue template
-about: ""
-title: "[Feature|Fix|Refactor|Chore]"
-labels: ""
+name: Refactor issue template
+about: 리팩토링
+title: "[Refactor]"
+labels: ♻️ Refactor
 assignees: ""
 ---
 
