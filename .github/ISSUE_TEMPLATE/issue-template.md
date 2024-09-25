@@ -1,6 +1,8 @@
 ---
 name: Issue template
+about: ""
 title: "[Feature|Fix|Refactor|Chore]"
+labels: ""
 assignees: ""
 ---
 
