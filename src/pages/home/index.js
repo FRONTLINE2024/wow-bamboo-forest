@@ -16,7 +16,9 @@ export class Home extends Component {
       num: this.element.children.length + 1,
     });
 
-    card.element.addEventListener("click", () => {
+    card.element.addEventListener("click", (event) => {
+      event.stopPropagation();
+
       createPost();
       card.setState({
         number: card.state.number + 1,
