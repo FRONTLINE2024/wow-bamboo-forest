@@ -37,15 +37,14 @@ jobs:
             echo "No issue number found in the branch name"
           fi
 
-      # PR에 이슈 링크
-      - name: Link PR to issue
-        if: steps.extract_issue.outputs.issue
-        run: |
-          ISSUE_NUMBER=${{ steps.extract_issue.outputs.issue }}
-          echo "Linking PR to issue #$ISSUE_NUMBER"
-          gh pr edit ${{ github.event.pull_request.number }} --add-linked-issue $ISSUE_NUMBER
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          # Get the current PR body
+          PR_BODY="${{ github.event.pull_request.body }}"
+
+          # Insert the issue number below "## 이슈 번호"
+          UPDATED_BODY=$(echo "$PR_BODY" | sed "/## 이슈 번호/{n;s/^/- close #$ISSUE_NUMBER\n/;}")
+
+          # Update the PR body with the new content
+          gh pr edit ${{ github.event.pull_request.number }} --body "$UPDATED_BODY"
 
   auto_assign_issue:
     runs-on: ubuntu-latest
