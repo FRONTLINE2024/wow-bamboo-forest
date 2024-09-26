@@ -1,5 +1,4 @@
-import App from "./App";
+import { goto } from "./router";
 import "./reset.scss";
 
-const app = new App(document.getElementById("#app"));
-app.render();
+goto(location.pathname + location.search);
