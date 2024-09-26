@@ -11,8 +11,7 @@ export class Home extends Component {
     return `${text} 를 써봅니다`;
   }
 
-  render() {
-    super.render();
+  mounted() {
     const card = new Card(this.element, {
       num: this.element.children.length + 1,
     });

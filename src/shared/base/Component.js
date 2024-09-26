@@ -28,7 +28,7 @@ export class Component {
   }
 
   /**
-   *
+   * @description 컴포넌트의 상태를 초기화합니다.
    */
   setup() {
     this.state = {};
@@ -57,5 +57,12 @@ export class Component {
    */
   render() {
     this.element.innerHTML = this.template();
+    this.mounted();
   }
+
+  /**
+   * @description 컴포넌트 렌더링 이후 실행할 작업을 정의합니다.
+   */
+  // eslint-disable-next-line class-methods-use-this
+  mounted() {}
 }
