@@ -1,5 +1,4 @@
-import { Home } from "../pages";
+import { goto } from "./router";
 import "./reset.scss";
 
-const home = new Home({}, "main");
-document.getElementById("#app").appendChild(home.element);
+goto(location.pathname + location.search);

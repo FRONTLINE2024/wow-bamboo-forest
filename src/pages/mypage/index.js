@@ -4,10 +4,10 @@ import { goto } from "../../app/router";
 /**
  *
  */
-export const Home = () => {
+export const Mypage = () => {
   document.getElementById("#app").innerHTML = `
   <nav>
-    <div>Home</div>
+    <div>Mypage</div>
     <ul>
       <li><button class="home">Home</button></li>
       <li><button class="mypage">Mypage</button></li>
