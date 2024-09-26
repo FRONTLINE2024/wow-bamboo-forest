@@ -35,6 +35,7 @@ jobs:
             echo "::set-output name=issue::$ISSUE_NUMBER"
           else
             echo "No issue number found in the branch name"
+          fi
 
       # PR에 이슈 링크
       - name: Link PR to issue
