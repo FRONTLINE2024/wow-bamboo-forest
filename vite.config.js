@@ -4,7 +4,9 @@ export default defineConfig({
   root: "src/app",
   css: {
     preprocessorOptions: {
-      scss: {},
+      scss: {
+        additionalData: '@import "./src/shared/styles/colors.scss";',
+      },
     },
   },
 });
