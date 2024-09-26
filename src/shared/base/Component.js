@@ -19,7 +19,10 @@ export class Component {
   constructor(target, props, tag = "div") {
     this.target = target;
     this.props = props;
+
     this.element = document.createElement(tag);
+    this.target.appendChild(this.element);
+
     this.setup();
     this.render();
   }
@@ -54,6 +57,5 @@ export class Component {
    */
   render() {
     this.element.innerHTML = this.template();
-    this.target.appendChild(this.element);
   }
 }
