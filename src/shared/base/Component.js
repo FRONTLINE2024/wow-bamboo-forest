@@ -38,6 +38,7 @@ export class Component {
    * @description 템플릿 메서드 (상속받은 클래스가 구현)
    * @returns {string} 컴포넌트의 HTML 문자열을 반환
    */
+  // this.state를 사용하여 템플릿을 구성합니다.
   // eslint-disable-next-line class-methods-use-this
   template() {
     return "";
@@ -63,6 +64,7 @@ export class Component {
   /**
    * @description 컴포넌트 렌더링 이후 실행할 작업을 정의합니다.
    */
+  // 주로 자식 렌더링이 이루어지므로 this가 상속받은 클래스에서 사용됩니다.
   // eslint-disable-next-line class-methods-use-this
   mounted() {}
 }
