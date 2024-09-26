@@ -13,11 +13,16 @@ export class Home extends Component {
 
   render() {
     super.render();
+    const card = new Card(this.element, {
+      num: this.element.children.length + 1,
+    });
 
-    const card = new Card(this.element);
     card.element.addEventListener("click", () => {
       createPost();
+      card.setState({
+        number: card.state.number + 1,
+        content: `${card.state.number} 번째 클릭`,
+      });
     });
-    card.render();
   }
 }

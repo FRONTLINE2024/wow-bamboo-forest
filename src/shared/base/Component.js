@@ -6,7 +6,7 @@ export class Component {
 
   element;
 
-  #props;
+  props;
 
   state;
 
@@ -18,9 +18,10 @@ export class Component {
    */
   constructor(target, props, tag = "div") {
     this.target = target;
-    this.#props = props;
+    this.props = props;
     this.element = document.createElement(tag);
     this.setup();
+    this.render();
   }
 
   /**

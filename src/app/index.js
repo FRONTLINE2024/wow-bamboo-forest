@@ -1,5 +1,5 @@
 import { Home } from "../pages";
 import "./reset.scss";
 
-const app = new Home(document.getElementById("#app"), {}, "main");
-app.render();
+// eslint-disable-next-line no-new
+new Home(document.getElementById("#app"), {}, "main");
