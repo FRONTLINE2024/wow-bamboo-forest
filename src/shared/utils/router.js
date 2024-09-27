@@ -1,4 +1,9 @@
 let routes = {};
+window.addEventListener("popstate", () => {
+  if (routes[location.pathname]) {
+    routes[location.pathname]();
+  }
+});
 
 /**
  *
@@ -16,12 +21,6 @@ export const usePathName = (url) => {
  * @returns {object} - init, push 함수
  */
 export const useRouter = () => {
-  window.addEventListener("popstate", () => {
-    if (routes[location.pathname]) {
-      routes[location.pathname]();
-    }
-  });
-
   /**
    *
    * @param {string} url - 이동할 URL
