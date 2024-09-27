@@ -1,10 +1,11 @@
-// eslint-disable-next-line
-import { goto } from "../../app/router";
+import { useRouter } from "../../shared";
 
 /**
  *
  */
 export const Home = () => {
+  const router = useRouter();
+
   document.getElementById("#app").innerHTML = `
   <nav>
     <div>Home</div>
@@ -16,10 +17,10 @@ export const Home = () => {
 `;
 
   document.querySelector(".home").addEventListener("click", () => {
-    goto("/", { push: true });
+    router.push("/");
   });
 
   document.querySelector(".mypage").addEventListener("click", () => {
-    goto("/mypage", { push: true });
+    router.push("/mypage");
   });
 };
