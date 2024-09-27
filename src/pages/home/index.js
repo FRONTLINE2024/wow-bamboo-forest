@@ -12,6 +12,7 @@ export const Home = () => {
     <ul>
       <li><button class="home">Home</button></li>
       <li><button class="mypage">Mypage</button></li>
+      <li><a is="my-link" href="/mypage">커스텀 링크</a></li>
     </ul>
   </nav>
 `;
