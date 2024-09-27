@@ -1,4 +1,7 @@
-import { goto } from "./router";
+import { useRouter } from "../shared";
+
+import { routes } from "./routes";
 import "./reset.scss";
 
-goto(location.pathname + location.search);
+const router = useRouter();
+router.init({ routes });
