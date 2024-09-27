@@ -2,7 +2,7 @@ let routes = {};
 
 /**
  *
- * @param {string} url - URL
+ * @param {string} url - 이동할 URL
  * @returns {object} - pathname, params
  */
 export const usePathName = (url) => {
@@ -13,7 +13,7 @@ export const usePathName = (url) => {
 };
 
 /**
- * @returns {object} - 라우터 객체
+ * @returns {object} - init, push 함수
  */
 export const useRouter = () => {
   window.addEventListener("popstate", () => {
