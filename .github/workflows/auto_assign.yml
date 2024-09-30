@@ -20,32 +20,6 @@ jobs:
         with:
           assignees: ${{ github.actor }}
 
-      # 브랜치 이름에서 이슈 번호 추출
-      - name: Extract issue number from branch name
-        id: extract_issue
-        run: |
-          BRANCH_NAME=${{ github.head_ref }}
-          echo "Branch name is $BRANCH_NAME"
-
-          # Split by '#' and get the part after it
-          ISSUE_NUMBER=$(echo "$BRANCH_NAME" | awk -F'#' '{print $2}')
-
-          if [ -n "$ISSUE_NUMBER" ]; then
-            echo "Issue number: $ISSUE_NUMBER"
-            echo "::set-output name=issue::$ISSUE_NUMBER"
-          else
-            echo "No issue number found in the branch name"
-          fi
-
-          # Get the current PR body
-          PR_BODY="${{ github.event.pull_request.body }}"
-
-          # Insert the issue number below "## 이슈 번호"
-          UPDATED_BODY=$(echo "$PR_BODY" | sed "/## 이슈 번호/{n;s/^/- close #$ISSUE_NUMBER\n/;}")
-
-          # Update the PR body with the new content
-          gh pr edit ${{ github.event.pull_request.number }} --body "$UPDATED_BODY"
-
   auto_assign_issue:
     runs-on: ubuntu-latest
     if: github.event_name == 'issues'
