@@ -1,10 +1,12 @@
 /**
  *
+ * @param {object} params - Home에 전달할 데이터
+ * @param {object} params.searchParams - 쿼리파라미터 객체
  */
-export const Home = () => {
+export const Home = ({ searchParams }) => {
   document.getElementById("#app").innerHTML = `
   <nav>
-    <div>Home</div>
+    <div>Home ${searchParams.test || ""}</div>
     <ul>
       <li><button class="home">Home</button></li>
       <li><button class="mypage">Mypage</button></li>
@@ -18,6 +20,6 @@ export const Home = () => {
   });
 
   document.querySelector(".mypage").addEventListener("click", () => {
-    navigation.navigate("/mypage");
+    navigation.navigate("/mypage?test=123");
   });
 };
