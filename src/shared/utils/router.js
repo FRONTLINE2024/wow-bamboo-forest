@@ -1,7 +1,9 @@
 let routes = {};
 window.addEventListener("popstate", () => {
   if (routes[location.pathname]) {
-    routes[location.pathname]();
+    routes[location.pathname]({
+      searchParams: Object.fromEntries(new URLSearchParams(location.search)),
+    });
   }
 });
 
