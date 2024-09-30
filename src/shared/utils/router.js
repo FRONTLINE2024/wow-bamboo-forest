@@ -57,8 +57,13 @@ export const useRouter = () => {
     move(location.pathname + location.search, true);
   };
 
+  const back = () => {
+    history.back();
+  };
+
   return {
     init,
     push,
+    back,
   };
 };
