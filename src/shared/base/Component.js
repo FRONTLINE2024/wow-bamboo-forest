@@ -2,8 +2,6 @@
  * @description 공용 컴포넌트 클래스
  */
 export class Component {
-  target;
-
   element;
 
   props;
@@ -12,16 +10,12 @@ export class Component {
 
   /**
    *
-   * @param {HTMLElement} target - 컴포넌트를 렌더링할 부모 요소
    * @param {any} props - 부모에서 컴포넌트에 전달할 데이터
    * @param {HTMLElement} tag - 생성할 HTML 태그 종류
    */
-  constructor(target, props, tag = "div") {
-    this.target = target;
+  constructor(props, tag = "div") {
     this.props = props;
-
     this.element = document.createElement(tag);
-    this.target.appendChild(this.element);
 
     this.setup();
     this.render();

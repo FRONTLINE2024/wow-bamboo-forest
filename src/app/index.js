@@ -1,5 +1,5 @@
 import { Home } from "../pages";
 import "./reset.scss";
 
-// eslint-disable-next-line no-new
-new Home(document.getElementById("#app"), {}, "main");
+const home = new Home({}, "main");
+document.getElementById("#app").appendChild(home.element);

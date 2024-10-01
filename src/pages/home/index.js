@@ -4,6 +4,9 @@ export class Home extends Component {
   setup() {
     this.element.id = "my-app";
     this.state = { text: "Hello, World!" };
+    this.props.card = new Card({
+      num: this.element.children.length + 1,
+    });
   }
 
   template() {
@@ -12,10 +15,8 @@ export class Home extends Component {
   }
 
   mounted() {
-    const card = new Card(this.element, {
-      num: this.element.children.length + 1,
-    });
-
+    const { card } = this.props;
+    this.element.appendChild(card.element);
     card.element.addEventListener("click", (event) => {
       event.stopPropagation();
 
