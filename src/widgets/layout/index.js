@@ -15,12 +15,11 @@ export class Layout extends Component {
     this.element.className = styles.container;
   }
 
+  // eslint-disable-next-line class-methods-use-this
   template() {
-    const { children } = this.props;
-    if (!children) return "";
-
     return /* html */ `
-      ${children}
+      <nav></nav>
+      <main id="content"></main>
     `;
   }
 
@@ -28,7 +27,7 @@ export class Layout extends Component {
    *
    */
   mounted() {
-    // eslint-disable-next-line no-new
-    new Navigation(this.element, {}, "nav");
+    const navigation = new Navigation({}, "div");
+    this.element.querySelector("nav").appendChild(navigation.element);
   }
 }

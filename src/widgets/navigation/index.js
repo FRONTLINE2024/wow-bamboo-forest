@@ -14,6 +14,11 @@ export class Navigation extends Component {
    */
   setup() {
     this.element.className = styles.container;
+    this.props.writeButton = new Button(
+      { type: "enable", content: "글쓰기" },
+      "button",
+    );
+    this.props.mypageButton = new Button({ content: "마이" }, "button");
   }
 
   /**
@@ -38,12 +43,10 @@ export class Navigation extends Component {
    */
   mounted() {
     const rightChild = this.element.querySelector(`.${styles.right}`);
-    const writeButton = new Button(
-      rightChild,
-      { type: "enable", content: "글쓰기" },
-      "button",
-    );
-    const mypageButton = new Button(rightChild, { content: "마이" }, "button");
+
+    const { writeButton, mypageButton } = this.props;
+    rightChild.appendChild(writeButton.element);
+    rightChild.appendChild(mypageButton.element);
 
     writeButton.element.addEventListener("click", () => {
       createPost();

@@ -1,27 +1,12 @@
-import { useRouter } from "../../shared";
+import { Component } from "../../shared";
+export class Mypage extends Component {
+  setup() {
+    this.element.id = "mypage";
+    this.state = { text: "마이페이지" };
+  }
 
-/**
- *
- * @param {object} params - Mypage에 전달할 데이터
- * @param {object} params.searchParams - 쿼리파라미터 객체
- */
-export const Mypage = ({ searchParams }) => {
-  const router = useRouter();
-  document.getElementById("#app").innerHTML = `
-  <nav>
-    <div>Mypage ${searchParams?.test || ""}</div>
-    <ul>
-      <li><button class="home">Home</button></li>
-      <li><button class="mypage">Mypage</button></li>
-    </ul>
-  </nav>
-`;
-
-  document.querySelector(".home").addEventListener("click", () => {
-    router.push("/?test=hi");
-  });
-
-  document.querySelector(".mypage").addEventListener("click", () => {
-    router.push("/mypage");
-  });
-};
+  template() {
+    const { text } = this.state;
+    return `${text}를 써봅니다`;
+  }
+}

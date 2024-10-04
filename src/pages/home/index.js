@@ -2,19 +2,24 @@ import { createPost } from "../../features";
 import { Component, Card } from "../../shared";
 export class Home extends Component {
   setup() {
-    this.element.id = "my-app";
-    this.state = { text: "Hello, World!" };
+    this.element.id = "home";
+    this.state = { text: "홈페이지" };
+    this.props.card = new Card({
+      num: this.element.children.length + 1,
+    }, "li");
   }
 
   template() {
     const { text } = this.state;
-    return `${text} 를 써봅니다`;
+    return /* html */ `
+      <div>${text}를 써봅니다</div>
+      <ul></ul>
+    `;
   }
 
   mounted() {
-    const card = new Card(this.element, {
-      num: this.element.children.length + 1,
-    });
+    const { card } = this.props;
+    this.element.querySelector("ul").appendChild(card.element);
 
     card.element.addEventListener("click", (event) => {
       event.stopPropagation();

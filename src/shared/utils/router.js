@@ -1,9 +1,14 @@
 let routes = {};
 window.addEventListener("popstate", () => {
   if (routes[location.pathname]) {
-    routes[location.pathname]({
+    const Page = routes[location.pathname];
+    const page = new Page({
       searchParams: Object.fromEntries(new URLSearchParams(location.search)),
     });
+    const content = document.getElementById("content");
+
+    content.innerHTML = "";
+    content.appendChild(page.element);
   }
 });
 
@@ -34,9 +39,13 @@ export const useRouter = () => {
     if (routes[pathname]) {
       if (!isInit) history.pushState({}, "", url);
 
-      routes[pathname]({
-        searchParams: params,
-      });
+      const Page = routes[pathname];
+      const page = new Page({ searchParams: params });
+      const content = document.getElementById("content");
+
+      content.innerHTML = "";
+      content.appendChild(page.element);
+
       return;
     }
 
