@@ -54,7 +54,7 @@ export class Navigation extends Component {
 
     mypageButton.element.addEventListener("click", () => {
       const router = useRouter();
-      router.push("/mypage");
+      router.push("/mypage?test=쿼리스트링테스트");
     });
   }
 }

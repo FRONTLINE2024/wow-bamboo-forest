@@ -7,6 +7,7 @@ export class Mypage extends Component {
 
   template() {
     const { text } = this.state;
-    return `${text}를 써봅니다`;
+    const { searchParams } = this.props;
+    return `${text}를 써봅니다. ${searchParams.test}`;
   }
 }
