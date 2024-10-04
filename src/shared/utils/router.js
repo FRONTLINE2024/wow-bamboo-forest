@@ -1,12 +1,15 @@
 let routes = {};
+
+const formatStringToParams = (searchParams) => Object.fromEntries(new URLSearchParams(searchParams))
+
 window.addEventListener("popstate", () => {
   if (routes[location.pathname]) {
     const Page = routes[location.pathname];
     const page = new Page({
-      searchParams: Object.fromEntries(new URLSearchParams(location.search)),
+      searchParams: formatStringToParams(location.search),
     });
-    const content = document.getElementById("content");
 
+    const content = document.getElementById("content");
     content.innerHTML = "";
     content.appendChild(page.element);
   }
@@ -18,8 +21,8 @@ window.addEventListener("popstate", () => {
  * @returns {object} - pathname, params
  */
 export const usePathName = (url) => {
-  const pathname = url.split("?")[0];
-  const params = Object.fromEntries(new URLSearchParams(url.split("?")[1]));
+  const [pathname, stringParams] = url.split("?");
+  const params = formatStringToParams(stringParams);
 
   return { pathname, params };
 };
