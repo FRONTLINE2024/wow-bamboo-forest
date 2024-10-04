@@ -29,7 +29,7 @@ export class Navigation extends Component {
     return /* html */ `
       <div class=${styles.content}>
         <h1>
-          <a is="my-link" href="/">
+          <a is="my-link" href="/" class=${styles.logo}>
             <img src=${logoUrl} alt="Wow Bamboo Forest" />
           </a>
         </h1>
