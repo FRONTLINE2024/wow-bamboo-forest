@@ -1,4 +1,3 @@
-import { createPost } from "../../features";
 import { Component, Card } from "../../shared";
 export class Home extends Component {
   setup() {
@@ -21,10 +20,7 @@ export class Home extends Component {
     const { card } = this.props;
     this.element.querySelector("ul").appendChild(card.element);
 
-    card.element.addEventListener("click", (event) => {
-      event.stopPropagation();
-
-      createPost();
+    card.element.addEventListener("click", () => {
       card.setState({
         number: card.state.number + 1,
         content: `${card.state.number} 번째 클릭`,
