@@ -14,11 +14,8 @@ export class Navigation extends Component {
    */
   setup() {
     this.element.className = styles.container;
-    this.props.writeButton = new Button(
-      { type: "enable", content: "글쓰기" },
-      "button",
-    );
-    this.props.mypageButton = new Button({ content: "마이" }, "button");
+    this.props.writeButton = new Button({ type: "enable", content: "글쓰기" });
+    this.props.mypageButton = new Button({ content: "마이" });
   }
 
   /**
