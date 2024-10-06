@@ -10,10 +10,10 @@ export class Component {
 
   /**
    *
-   * @param {any} props - 부모에서 컴포넌트에 전달할 데이터
-   * @param {HTMLElement} tag - 생성할 HTML 태그 종류
+   * @param {any} [props] - 부모에서 컴포넌트에 전달할 데이터
+   * @param {HTMLElement} [tag] - 생성할 HTML 태그 종류
    */
-  constructor(props, tag = "div") {
+  constructor(props = {}, tag = "div") {
     this.props = props;
     this.element = document.createElement(tag);
 
