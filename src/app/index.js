@@ -1,5 +1,12 @@
-import { Home } from "../pages";
+import { useRouter, Link } from "../shared";
+import { Layout } from "../widgets";
+
+import { routes } from "./routes";
 import "./reset.scss";
 
-const home = new Home({}, "main");
-document.getElementById("#app").appendChild(home.element);
+const layout = new Layout({});
+document.getElementById("#app").appendChild(layout.element);
+
+const router = useRouter();
+router.init({ routes });
+customElements.define("my-link", Link, { extends: "a" });
