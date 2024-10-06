@@ -18,6 +18,10 @@
 
   white-space: pre-wrap;
   resize: none;
+
+  &:focus {
+    border-color: $green1;
+  }
 }
 
 .input-lg {
