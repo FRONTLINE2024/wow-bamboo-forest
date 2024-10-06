@@ -1,0 +1,26 @@
+  .form {
+    width: 100%;
+  
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+  }
+  
+  .submit {
+    width: 100%;
+    height: 2.5rem;
+  
+    border-radius: 0.25rem;
+    padding: 0.5rem 1rem;
+  
+    background-color: $green1;
+    color: $white;
+  
+    font-weight: 500;
+  
+    @media (min-width: 1024px) {
+      height: 2.75rem;
+      font-size: 0.9rem;
+    }
+  }
