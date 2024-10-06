@@ -1,0 +1,32 @@
+@mixin button($type) {
+  width: fit-content;
+  height: 2rem;
+
+  border-radius: 0.25rem;
+  padding: 0.5rem 1rem;
+
+  @if $type == "enable" {
+    background-color: $green1;
+    color: $white;
+  } @else if $type == "default" {
+    background-color: transparent;
+    color: $gray3;
+    font-size: 0.875rem;
+
+    border: 1px solid $gray1;
+  } @else {
+    background-color: transparent;
+    color: $gray3;
+    font-size: 0.875rem;
+
+    border: 1px solid $gray1;
+  }
+}
+
+.button-enable {
+  @include button("enable");
+}
+
+.button-default {
+  @include button("default");
+}

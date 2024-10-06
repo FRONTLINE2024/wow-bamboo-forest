@@ -9,6 +9,16 @@ import styles from "./card.module.scss";
 export class Card extends Component {
   /**
    *
+   * @param {object} props - 카드 컴포넌트 props
+   * @param {number} props.num - 카드 번호
+   * @param {HTMLElement} [tag] - 카드 컴포넌트의 태그
+   */
+  constructor({ num }, tag = "div") {
+    super({ num }, tag);
+  }
+
+  /**
+   *
    */
   setup() {
     this.element.className = styles.card;
