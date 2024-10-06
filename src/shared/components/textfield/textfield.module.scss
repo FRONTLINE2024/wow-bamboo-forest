@@ -1,0 +1,29 @@
+@mixin input($type) {
+  @if $type == "lg" {
+    width: 100%;
+    height: 10rem;
+  } @else if $type == "sm" {
+    width: 100%;
+    height: 2.5rem;
+  } @else {
+    width: 100%;
+    height: 2.5rem;
+  }
+
+  padding: 0.75rem;
+
+  background-color: $gray0;
+  border: 1px solid $gray1;
+  border-radius: 0.25rem;
+
+  white-space: pre-wrap;
+  resize: none;
+}
+
+.input-lg {
+  @include input("lg");
+}
+
+.input-sm {
+  @include input("sm");
+}
