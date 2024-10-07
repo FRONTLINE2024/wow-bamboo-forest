@@ -14,8 +14,6 @@ export class Navigation extends Component {
    */
   setup() {
     this.element.className = styles.container;
-    this.props.writeButton = new Button({ type: "enable", content: "글쓰기" });
-    this.props.mypageButton = new Button({ content: "마이" });
   }
 
   /**
@@ -40,8 +38,9 @@ export class Navigation extends Component {
    */
   mounted() {
     const rightChild = this.element.querySelector(`.${styles.right}`);
+    const writeButton = new Button({ type: "enable", content: "글쓰기" });
+    const mypageButton = new Button({ content: "마이" });
 
-    const { writeButton, mypageButton } = this.props;
     rightChild.appendChild(writeButton.element);
     rightChild.appendChild(mypageButton.element);
 
