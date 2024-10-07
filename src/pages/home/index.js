@@ -3,9 +3,6 @@ export class Home extends Component {
   setup() {
     this.element.id = "home";
     this.state = { text: "홈페이지" };
-    this.props.card = new Card({
-      num: this.element.children.length + 1,
-    }, "li");
   }
 
   template() {
@@ -17,8 +14,11 @@ export class Home extends Component {
   }
 
   mounted() {
-    const { card } = this.props;
-    this.element.querySelector("ul").appendChild(card.element);
+    const cardListElement = this.element.querySelector("ul");
+    const card = new Card({
+      num: cardListElement.children.length + 1,
+    }, "li");
+    cardListElement.appendChild(card.element);
 
     card.element.addEventListener("click", () => {
       card.setState({
